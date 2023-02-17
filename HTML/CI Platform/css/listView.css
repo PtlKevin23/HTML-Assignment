@@ -176,6 +176,31 @@ a{
     box-shadow: 1px 1px 10px -1px rgba(167, 165, 165, 0.852);
 }
 
+.card-body #location-body{
+    padding: 5px 8px;
+    width: fit-content;
+    height: 35px;   
+    cursor: pointer;
+    background-color: #69666679;
+    border-radius: 15px;
+}
+
+.card-body h5{
+    margin-top: 20px;
+}
+
+.first-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.first-row #first-row-leftSide{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .card-title{
     margin-top: 10px;
     font-size: 26px;
@@ -187,6 +212,14 @@ a{
     font-size: 15px;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 200;
+}
+
+.card-detail{
+    margin-top: 20px;
+}
+
+.details{
+    display: flex;
 }
 
 .organizor-detail{
@@ -205,14 +238,33 @@ a{
     padding-top: 20px;
 }
 
-.duration{
-    
+.duration{   
     font-size: 15px;
     font-family: 'Noto Sans', sans-serif;
     margin: 0px 8px;
     padding: 4px;
-    border-radius: 10px;
-    border: 1px solid #dbd8d8;
+}
+
+.numaricDetail{
+    display: flex;
+    justify-content: space-between;
+    align-items: centers;
+}
+
+.numaricDetail img{
+    height: 30px;
+    width: 30px;
+    margin-top: 10px;
+}
+
+.numaricDetail #numbers h5{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+}
+
+.numaricDetail #numbers p{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
 }
 
 .card-body #applyBtn .btnCustom{
