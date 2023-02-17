@@ -1,0 +1,367 @@
+a {
+    text-decoration: none;
+}
+
+.firstHeader {
+    gap: 30px;
+}
+
+.firstHeader img {
+    margin-right: 50px;
+}
+
+.firstHeader a {
+    height: 22px;
+    font-size: 16px;
+    color: #333333;
+    opacity: 1;
+}
+
+.btnCustom {
+    font-size: 16px;
+    color: #333333;
+    background-color: #fff;
+    border: none;
+    opacity: 1;
+}
+
+.btn:hover {
+    color: #333333;
+    background-color: #fff;
+}
+
+.userContent {
+    margin-left: 350px;
+}
+
+.userContent #notification {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #fff;
+    border: #fff;
+}
+
+.imgIcon {
+    margin-left: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card {
+    margin-top: 40px;
+    height: 750px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.card-image {
+    width: 55%;
+    height: 60%;
+    object-fit: cover;
+}
+
+.img-fluid {
+    height: 550px;
+}
+
+.card-body {
+    padding: 0px 30px;
+    width: 45%;
+}
+
+.card-title {
+    margin-top: 30px;
+    font-size: 38px;
+    color: #414141;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.card-text {
+    font-size: 17px;
+    margin-top: 5px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
+}
+
+.thumbnail-images {
+    max-width: 900px;
+}
+
+.img-thumbnail {
+    height: auto;
+    width: 23%;
+}
+
+.duration {
+    padding: 5px 9px;
+    border-radius: 20px;
+    border: 1px solid #333333;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.numaricDetail {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.numaricDetail img {
+    height: 30px;
+    width: 30px;
+    margin-top: 10px;
+}
+
+.numaricDetail #numbers h4 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+}
+
+.numaricDetail #numbers p {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
+}
+
+#progress {
+    margin: 17px 0px;
+}
+
+#progress span {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
+}
+
+.progress-bar {
+    width: 150px;
+    height: 15px;
+    border-radius: 16px;
+    border: 1px solid #212020;
+    overflow: hidden;
+}
+
+.progress-bar::after {
+    content: '';
+    background: linear-gradient(135deg, #fd3b00, #ee6f48a8);
+    width: 0;
+    height: 100%;
+    border-radius: 16px;
+    animation: progress 2s linear forwards;
+}
+
+@keyframes progress {
+    100% {
+        width: 80%;
+    }
+}
+
+.Favourite {
+    height: 80px;
+    align-items: center;
+}
+
+.twoButtons #twoButtons {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 17px;
+    color: #757575;
+    background-color: #fff;
+}
+
+.another-details {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.box {
+    border: 1px solid #333333;
+    width: 150px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Icon span {
+    color: #757575;
+    font-size: 13px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.card-body #applyBtn {
+    height: 60px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.card-body #applyBtn .btnCustom {
+    padding: 8px;
+    width: auto;
+    color: #F88634;
+    border: 3px solid #F88634;
+    border-radius: 20px;
+}
+
+
+
+
+.releted-mission-title {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 38px;
+}
+
+.missionCard {
+    margin-top: 20px;
+}
+
+.releted-card {
+    position: relative;
+}
+
+.releted-theme-detail {
+    position: absolute;
+    top: 37%;
+    left: 36%;
+}
+
+.releted-theme-name {
+    font-size: 15px;
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0px 8px;
+    padding: 4px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.releted-card #location {
+    padding: 5px 8px;
+    width: fit-content;
+    height: 35px;
+    background-color: #212020;
+    color: #fff;
+    opacity: 0.6;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    border-radius: 20px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.releted-card #likeBtn {
+    width: 45px;
+    height: 45px;
+    background-color: #212020;
+    opacity: 0.6;
+    position: absolute;
+    top: 20%;
+    right: 2%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.releted-card #saveBtn {
+    width: 45px;
+    height: 45px;
+    background-color: #212020;
+    opacity: 0.6;
+    position: absolute;
+    top: 29%;
+    right: 2%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.releted-card:hover>img {
+    opacity: 0.7;
+}
+
+.releted-card:hover {
+    box-shadow: 1px 1px 10px -2px rgba(167, 165, 165, 0.852);
+}
+
+.releted-card-title {
+    margin-top: 10px;
+    font-size: 26px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+}
+
+.releted-card-text {
+    font-size: 15px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
+}
+
+.organizor-detail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.organizor-detail #organizer {
+    font-size: 16px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.releted-card-body #releted-applyBtn {
+    height: 60px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.releted-card-body #releted-applyBtn .releted-btnCustom {
+    padding: 8px;
+    width: auto;
+    color: #F88634;
+    border: 3px solid #F88634;
+    border-radius: 20px;
+}
+
+.releted-numaricDetail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.releted-numaricDetail img {
+    margin-top: 10px;
+}
+
+.releted-numaricDetail #releted-numbers h4 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+}
+
+.releted-numaricDetail #releted-numbers p {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
+}
+
+
+
+
+.bottomLine {
+    margin-top: 50px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.footer #leftLinks a {
+    font-family: 'Noto Sans', sans-serif;
+    margin: 10px;
+    color: #6d6c6cbd;
+}
