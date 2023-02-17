@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" class="rel" />
+    <link rel="stylesheet" href="css/errorPage.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Home</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-6 d-flex align-items-center firstHeader">
+
+                <img src="images/logo.png" alt="">
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle btnCustom" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Explore
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Explore item 1</a></li>
+                        <li><a class="dropdown-item" href="#">Explore item 2</a></li>
+                    </ul>
+                </div>
+
+                <a href="#">Stories</a>
+                <a href="#">News</a>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle btnCustom" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Policy
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Privacy Policy</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="col-6 py-2">
+                <div class="d-flex align-items-center float-right">
+
+                    <div><img src="images/user-img.png" alt="" class="imgIcon"></div>
+
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle btnCustom" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Evan Donohue
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">My Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="line mt-1 mb-0">
+
+    <div class="container d-flex justify-content-center">
+        <img src="images/404-Page-image.png" alt="">
+    </div>
+    <div class="container errorText">
+        <p id="firstText">Page not Found</p>
+        <p2 id="secondText"><span>Oops !</span> The Page You were looking for doesn't exist.</p2>
+        <p3 id="thirdText">You may have misstyped the address or the page may have moved.</p3>
+    </div>
+    <div id="applyBtn">
+        <button class="btnCustom" type="button"><a href="landingPage.html">Go To Homepage</a>
+            <img src="images/right-arrow.png" alt="">
+        </button>
+    </div>
+
+    <hr class="line bottomLine">
+
+    <footer>
+        <div class="container footer">
+            <div id="leftLinks">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Terms of use</a>
+            </div>
+            <div id="rightText">
+                <span>2019 <a href="#">Optimy.com</a>. All rights reserved</span>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="js/bootstrap.bundle.min.js"></script>
+
+</html>

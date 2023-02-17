@@ -1,0 +1,261 @@
+a{
+    text-decoration: none;
+}
+
+.firstHeader{
+    gap: 30px;
+}
+
+.firstHeader img{
+    margin-right: 50px;
+}
+
+.firstHeader a{
+    height: 22px;
+    font-size: 16px;
+    color: #333333;
+    opacity: 1;
+}
+
+.btnCustom{
+    font-size: 16px;
+    color: #333333;
+    background-color: #fff;
+    border: none;
+    opacity: 1;
+}
+
+.btn:hover{
+    color: #333333;
+    background-color: #fff;
+}
+
+.userContent{
+    margin-left: 350px;
+}
+
+.userContent #notification{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #fff;
+    border: #fff;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: 100%;
+}
+
+.imgIcon{
+    margin-left: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.filterNav{
+    border: 0.5px solid;
+    border-color: rgba(51, 51, 51, 0.1);
+    border-top: none;
+    border-bottom: none;
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainContaint{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainHeading #lightHeading{
+    font-size: 25px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
+}
+
+.mainHeading #missionCount{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.sortview{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.sortBy{
+    display: flex;
+    border: 0.5px solid;
+    border-color: rgba(51, 51, 51, 0.1);
+    height: 50px;
+    width: 150px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.view{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.gridIcon{
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: #72717152;
+}
+
+.listIcon{
+    padding: 5px;
+    font-size: 30px;
+    border: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #72717152;
+    text-align: center;
+}
+
+.missionCard{
+    margin-top: 50px;
+}
+
+.card #location{
+    padding: 5px 8px;
+    width: fit-content;
+    height: 35px;
+    background-color: #212020;
+    color: #fff;
+    opacity: 0.6;
+    position: absolute;
+    top: 5%;
+    left: 23%;
+    border-radius: 20px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.card #likeBtn{
+    width: 45px;
+    height: 45px;
+    background-color: #212020;
+    opacity: 0.6;
+    position: absolute;
+    top: 45%;
+    left: 29%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card #saveBtn{
+    width: 45px;
+    height: 45px;
+    background-color: #212020;
+    opacity: 0.6;
+    position: absolute;
+    top: 70%;
+    left: 29%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.img-fluid:hover{
+    opacity: 0.8;
+}
+
+.card:hover{
+    box-shadow: 1px 1px 10px -1px rgba(167, 165, 165, 0.852);
+}
+
+.card-title{
+    margin-top: 10px;
+    font-size: 26px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+}
+
+.card-text{
+    font-size: 15px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
+}
+
+.organizor-detail{
+    display: flex;
+    gap: 20px;
+}
+
+.organizor-detail #organizer{
+    font-size: 16px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.card-body #applyBtn{
+    /* height: 60px; */
+    /* text-align: center; */
+    padding-top: 20px;
+}
+
+.duration{
+    
+    font-size: 15px;
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0px 8px;
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid #dbd8d8;
+}
+
+.card-body #applyBtn .btnCustom{
+    padding: 5px;
+    width: 100px;
+    color: #F88634;
+    border: 3px solid #F88634;
+    border-radius: 20px;
+}
+
+.pages{
+    margin-top: 50px;
+}
+
+.pages ul{
+    justify-content: center;
+    gap: 15px;
+}
+
+.page-link{
+    background-color: #fff;
+    color: #000000;
+}
+
+.active-page{
+    background-color: #F88634;
+    width: 35px;
+    text-align: center;
+    padding: 6px;
+}
+
+.bottomLine{
+    margin-top: 50px;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.footer #leftLinks a{
+    font-family: 'Noto Sans', sans-serif;
+    margin: 10px;
+    color: #6d6c6cbd;
+}
