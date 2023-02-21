@@ -1,23 +1,23 @@
-a{
+a {
     text-decoration: none;
 }
 
-.firstHeader{
+.firstHeader {
     gap: 30px;
 }
 
-.firstHeader img{
+.firstHeader img {
     margin-right: 50px;
 }
 
-.firstHeader a{
+.firstHeader a {
     height: 22px;
     font-size: 16px;
     color: #333333;
     opacity: 1;
 }
 
-.btnCustom{
+.btnCustom {
     font-size: 16px;
     color: #333333;
     background-color: #fff;
@@ -25,16 +25,16 @@ a{
     opacity: 1;
 }
 
-.btn:hover{
+.btn:hover {
     color: #333333;
     background-color: #fff;
 }
 
-.userContent{
+.userContent {
     margin-left: 350px;
 }
 
-.userContent #notification{
+.userContent #notification {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -48,7 +48,7 @@ a{
     height: 100%;
 }
 
-.imgIcon{
+.imgIcon {
     margin-left: 30px;
     width: 40px;
     height: 40px;
@@ -56,7 +56,7 @@ a{
     object-fit: cover;
 }
 
-.filterNav{
+.filterNav {
     border: 0.5px solid;
     border-color: rgba(51, 51, 51, 0.1);
     border-top: none;
@@ -67,30 +67,30 @@ a{
     justify-content: center;
 }
 
-.mainContaint{
+.mainContaint {
     margin-top: 80px;
     display: flex;
     justify-content: space-between;
 }
 
-.mainHeading #lightHeading{
+.mainHeading #lightHeading {
     font-size: 25px;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 200;
 }
 
-.mainHeading #missionCount{
+.mainHeading #missionCount {
     font-size: 30px;
     font-weight: 400;
 }
 
-.sortview{
+.sortview {
     display: flex;
     align-items: center;
     gap: 50px;
 }
 
-.sortBy{
+.sortBy {
     display: flex;
     border: 0.5px solid;
     border-color: rgba(51, 51, 51, 0.1);
@@ -100,13 +100,13 @@ a{
     justify-content: space-around;
 }
 
-.view{
+.view {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-.gridIcon{
+.gridIcon {
     background-color: #fff;
     width: 50px;
     height: 50px;
@@ -114,7 +114,7 @@ a{
     border: #72717152;
 }
 
-.listIcon{
+.listIcon {
     padding: 5px;
     font-size: 30px;
     border: #fff;
@@ -125,11 +125,11 @@ a{
     text-align: center;
 }
 
-.missionCard{
+.missionCard {
     margin-top: 50px;
 }
 
-.card #location{
+.card #location {
     padding: 5px 8px;
     width: fit-content;
     height: 35px;
@@ -144,7 +144,7 @@ a{
     cursor: pointer;
 }
 
-.card #likeBtn{
+.card #likeBtn {
     width: 45px;
     height: 45px;
     background-color: #212020;
@@ -156,7 +156,7 @@ a{
     object-fit: cover;
 }
 
-.card #saveBtn{
+.card #saveBtn {
     width: 45px;
     height: 45px;
     background-color: #212020;
@@ -168,106 +168,107 @@ a{
     object-fit: cover;
 }
 
-.img-fluid:hover{
+.img-fluid:hover {
     opacity: 0.8;
 }
 
-.card:hover{
-    box-shadow: 1px 1px 10px -1px rgba(167, 165, 165, 0.852);
+.card:hover {
+    box-shadow: 1px 1px 10px 0px rgba(167, 165, 165, 0.852);
 }
 
-.card-body #location-body{
+.card-body #location-body {
     padding: 5px 8px;
     width: fit-content;
-    height: 35px;   
+    height: 35px;
     cursor: pointer;
-    background-color: #69666679;
+    background-color: #6966662f;
     border-radius: 15px;
 }
 
-.card-body h5{
+.card-body h5 {
     margin-top: 20px;
 }
 
-.first-row{
+.first-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.first-row #first-row-leftSide{
+.first-row #first-row-leftSide {
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
-.card-title{
+.card-title {
     margin-top: 10px;
     font-size: 26px;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
 }
 
-.card-text{
+.card-text {
     font-size: 15px;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 200;
 }
 
-.card-detail{
+.card-detail {
     margin-top: 20px;
 }
 
-.details{
+.details {
     display: flex;
+    gap: 10px;
 }
 
-.organizor-detail{
+.organizor-detail {
     display: flex;
     gap: 20px;
 }
 
-.organizor-detail #organizer{
+.organizor-detail #organizer {
     font-size: 16px;
     font-family: 'Noto Sans', sans-serif;
 }
 
-.card-body #applyBtn{
+.card-body #applyBtn {
     /* height: 60px; */
     /* text-align: center; */
     padding-top: 20px;
 }
 
-.duration{   
+.duration {
     font-size: 15px;
     font-family: 'Noto Sans', sans-serif;
     margin: 0px 8px;
     padding: 4px;
 }
 
-.numaricDetail{
+.numaricDetail {
     display: flex;
-    justify-content: space-between;
-    align-items: centers;
+    gap: 7px;
+    align-items: center;
 }
 
-.numaricDetail img{
-    height: 30px;
-    width: 30px;
-    margin-top: 10px;
+.numaricDetail img {
+    height: 25px;
+    width: 25px;
 }
 
-.numaricDetail #numbers h5{
+
+.numaricDetail #numbers h5 {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
 }
 
-.numaricDetail #numbers p{
+.numaricDetail #numbers p {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 200;
 }
 
-.card-body #applyBtn .btnCustom{
+.card-body #applyBtn .btnCustom {
     padding: 5px;
     width: 100px;
     color: #F88634;
@@ -275,38 +276,38 @@ a{
     border-radius: 20px;
 }
 
-.pages{
+.pages {
     margin-top: 50px;
 }
 
-.pages ul{
+.pages ul {
     justify-content: center;
     gap: 15px;
 }
 
-.page-link{
+.page-link {
     background-color: #fff;
     color: #000000;
 }
 
-.active-page{
+.active-page {
     background-color: #F88634;
     width: 35px;
     text-align: center;
     padding: 6px;
 }
 
-.bottomLine{
+.bottomLine {
     margin-top: 50px;
 }
 
-.footer{
+.footer {
     display: flex;
     justify-content: space-between;
     padding: 20px;
 }
 
-.footer #leftLinks a{
+.footer #leftLinks a {
     font-family: 'Noto Sans', sans-serif;
     margin: 10px;
     color: #6d6c6cbd;
