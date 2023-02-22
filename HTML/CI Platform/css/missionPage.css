@@ -53,21 +53,66 @@ a {
 
 .card {
     margin-top: 40px;
-    height: 750px;
+    height: 700px;
     display: flex;
     flex-direction: row;
 }
 
-
-
 .card-image {
-    width: 55%;
-    height: 60%;
+    width: 56%;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-.img-fluid {
-    height: 550px;
+.mySwiper2 {
+    height: 80%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.mySwiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+.mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .card-body {
@@ -172,6 +217,7 @@ a {
     font-family: 'Noto Sans', sans-serif;
     font-size: 17px;
     color: #757575;
+    border: 1px solid #3333335e;
     background-color: #fff;
 }
 
@@ -182,7 +228,7 @@ a {
 }
 
 .box {
-    border: 1px solid #333333;
+    border: 1px solid #3333335e;
     width: 150px;
     height: 100px;
     display: flex;
@@ -196,6 +242,10 @@ a {
     font-family: 'Noto Sans', sans-serif;
 }
 
+.Icon p {
+    font-family: 'Noto Sans', sans-serif;
+}
+
 .card-body #applyBtn {
     height: 60px;
     text-align: center;
@@ -206,9 +256,84 @@ a {
     padding: 8px;
     width: auto;
     color: #F88634;
-    border: 3px solid #F88634;
+    border: 2px solid #f8863494;
     border-radius: 20px;
 }
+
+.details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-details {
+    max-width: 65%;
+    margin-top: 30px;
+}
+
+.right-details {
+    max-width: 35%;
+    margin-top: 50px;
+    padding-left: 20px;
+}
+
+.information {
+    border: 1px solid #41414196;
+    padding: 15px;
+}
+
+.inner-information {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+
+.inner-information-heading p {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+}
+
+.inner-information-details p {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+}
+
+.inner-information-details span {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.recent-volunteers {
+    margin-top: 30px;
+    padding: 15px;
+    border: 1px solid #41414196;
+}
+
+.volunteer-image-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.volunteer-image {
+    height: 33.3%;
+    width: 33.3%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.volunteer-image img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.volunteer-image span {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 13px;
+}
+
+
+
 
 
 
@@ -221,7 +346,7 @@ a {
     font-size: 38px;
 }
 
-.missionCard {
+.releted-missionCard {
     margin-top: 20px;
 }
 
@@ -351,7 +476,7 @@ a {
 
 
 .bottomLine {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .footer {
@@ -364,4 +489,110 @@ a {
     font-family: 'Noto Sans', sans-serif;
     margin: 10px;
     color: #6d6c6cbd;
+}
+
+
+
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .firstHeader {
+        gap: 24px;
+    }
+
+    .userContent {
+        margin-left: 220px;
+    }
+
+    .card {
+        margin-left: -50px;
+        border: #fff;
+        height: auto;
+    }
+
+    .card-body {
+        padding: 0px 15px;
+        width: 50%;
+    }
+    
+    .card-title {
+        margin-top: 2px;
+        font-size: 20px;
+    }
+
+    .card-text {
+        font-size: 14px;
+        margin-top: 4px;
+    }
+
+    .duration {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .numaricDetail {
+        gap: 15px;
+        height: 50px;
+    }
+    
+    .numaricDetail img {
+        height: 25px;
+        width: 25px;
+    }
+    
+    .numaricDetail #numbers h4 {
+        font-size: 17px;
+    }
+    
+    .numaricDetail #numbers p {
+        font-size: 14px;
+    }
+
+    .Favourite {
+        height: 60px;
+    }
+    
+    .twoButtons #twoButtons {
+        padding: 4px 8px;
+        border-radius: 20px;
+        font-size: 13px;
+    }
+
+    .rating img {
+        height: 20px;
+        width: 20px;
+    }
+
+    .another-details {
+        margin-top: 15px;
+        gap: 8px;
+    }
+    
+    .box {
+        width: 100px;
+        height: 80px;
+    }
+    
+    .Icon span {
+        font-size: 9px;
+    }
+
+    .Icon p {
+        font-size: 10px;
+    }
+
+    .card-body #applyBtn {
+        height: 45px;
+        padding-top: 20px;
+    }
+    
+    .card-body #applyBtn .btnCustom {
+        padding: 6px;
+        width: auto;
+    }
+
+    .middle-line {
+        margin-top: 30px;
+    }
 }

@@ -11,7 +11,11 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/css/swiper.min.css">
 
 
     <title>volunteering Mission Page</title>
@@ -78,15 +82,45 @@
 
             <div class="card-image">
 
-                <img src="images/CSR-initiative-stands-for-Coffee--and-Farmer-Equity-4.png"
-                    class="img-fluid rounded-start" alt="...">
-                <div class="thumbnail-images">
-                    <img src="images/CSR-initiative-stands-for-Coffee--and-Farmer-Equity-5.png" class="img-thumbnail"
-                        alt="...">
-                    <img src="images/img3.png" class="img-thumbnail" alt="...">
-                    <img src="images/Grow-Trees-On-the-path-to-environment-sustainability-5.png" class="img-thumbnail"
-                        alt="...">
-                    <img src="images/img33.png" class="img-thumbnail" alt="...">
+                <div class="mission-images">
+                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                        class="swiper mySwiper2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="images/CSR-initiative-stands-for-Coffee--and-Farmer-Equity-2.png" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/Animal-welfare-_-save-birds-campaign-1.png" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/Nourish-the-Children-in--African-country-1.png" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/Education-Supplies-for-Every--Pair-of-Shoes-Sold-1.png" />
+                            </div>
+                        </div>
+                    </div>
+                    <div thumbsSlider="" class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-slide">
+                                <img src="images/CSR-initiative-stands-for-Coffee--and-Farmer-Equity-2.png" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/Animal-welfare-_-save-birds-campaign-1.png" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/Nourish-the-Children-in--African-country-1.png" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/Education-Supplies-for-Every--Pair-of-Shoes-Sold-1.png" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/Education-Supplies-for-Every--Pair-of-Shoes-Sold-1.png" />
+                            </div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -142,7 +176,7 @@
 
                 <div class="d-flex align-items-center">
                     <hr class="flex-grow-1" />
-                    <div>
+                    <div class="rating">
                         <img src="images/star-empty.png" alt="#">
                         <img src="images/star-empty.png" alt="#">
                         <img src="images/star-empty.png" alt="#">
@@ -193,13 +227,168 @@
         </div>
     </div>
 
-    <!-- <hr class="line mt-1 mb-0"> -->
+    <hr class="line middle-line">
+    <div class="container details">
+        <div class="left-details">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                        type="button" role="tab" aria-controls="home" aria-selected="true">Mission</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                        type="button" role="tab" aria-controls="profile" aria-selected="false">Organization</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
+                        type="button" role="tab" aria-controls="contact" aria-selected="false">Comments</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div>
+                        <h3>Introduction</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat
+                            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
+                            dolor
+                            sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip
+                            ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum
+                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                            culpa
+                            qui officia deserunt mollit anim id est laborum.
+                        </p>
+                        <h3>Challenge</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat
+                            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
+                            dolor
+                            sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip
+                            ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                            officia deserunt mollit anim id est laborum.
+                        </p>
+                        <h3>Documents</h3>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div>
+                        <h3>about</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod nesciunt vel ipsam quaerat
+                            repudiandae velit, repellendus maxime molestiae, maiores nobis quis inventore molestias
+                            corrupti illum, illo officiis sed tenetur repellat.
+                            Delectus magni illum libero omnis voluptate quas fuga ipsam nihil quod dolore, enim
+                            similique voluptatem, veniam aliquid non obcaecati nemo ullam sint voluptatum quaerat sequi
+                            eveniet iure. Saepe, in necessitatibus.
+                        </p>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Comments here
+                </div>
+            </div>
+
+        </div>
+
+        <div class="right-details">
+
+            <div class="information">
+                <h4>Information</h4>
+                <hr>
+                <div class="inner-information">
+                    <div class="inner-information-heading">
+                        <p>Skills</p>
+                        <p>Days</p>
+                        <p>Rating</p>
+                    </div>
+                    <div>
+                        <p>:</p>
+                        <p>:</p>
+                        <p>:</p>
+                    </div>
+                    <div class="inner-information-details">
+                        <p>Cool, Easy going, Math, Computer</p>
+                        <p>Weekend only</p>
+                        <p>
+                            <img src="images/selected-star.png" alt="#">
+                            <img src="images/selected-star.png" alt="#">
+                            <img src="images/selected-star.png" alt="#">
+                            <img src="images/selected-star.png" alt="#">
+                            <img src="images/selected-star.png" alt="#">
+                            <span>(by 125 volunteers)</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-volunteers">
+
+                <div>
+                    <h4>Recent Volunteers</h4>
+                    <hr>
+                </div>
+                <div class="volunteer-image-grid">
+                    <div class="volunteer-image">
+                        <img src="images/volunteer1.png" alt="#">
+                        <span class="volunteer-name">Andrew Johnson</span>
+                    </div>
+                    <div class="volunteer-image">
+                        <img src="images/volunteer2.png" alt="#">
+                        <span class="volunteer-name">Charles Vigue</span>
+                    </div>
+                    <div class="volunteer-image">
+                        <img src="images/volunteer3.png" alt="#">
+                        <span class="volunteer-name">Kathryn Roberts</span>
+                    </div>
+                    <div class="volunteer-image">
+                        <img src="images/volunteer4.png" alt="#">
+                        <span class="volunteer-name">Estella Fowles</span>
+                    </div>
+                    <div class="volunteer-image">
+                        <img src="images/volunteer5.png" alt="#">
+                        <span class="volunteer-name">Rose Lewis</span>
+                    </div>
+                    <div class="volunteer-image">
+                        <img src="images/volunteer6.png" alt="#">
+                        <span class="volunteer-name">Raymond Pabon</span>
+                    </div>
+                    <div class="volunteer-image">
+                        <img src="images/volunteer7.png" alt="#">
+                        <span class="volunteer-name">Travis Steen</span>
+                    </div>
+                    <div class="volunteer-image">
+                        <img src="images/volunteer8.png" alt="#">
+                        <span class="volunteer-name">Sarah Santillan</span>
+                    </div>
+                    <div class="volunteer-image">
+                        <img src="images/volunteer9.png" alt="#">
+                        <span class="volunteer-name">Linda Richards</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
 
     <div class="container releted-mission-title">
         <h2>Releted Missions</h2>
     </div>
 
-    <div class="container missionCard">
+    <div class="container releted-missionCard">
         <div class="row row-cols-1 row-cols-md-3 g-4">
 
             <!-- --------------------First Card ------------------------->
@@ -341,6 +530,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- --------------------Third Card ------------------------->
             <div class="col">
                 <div class="releted-card h-100">
@@ -424,3 +614,26 @@
 </body>
 
 </html>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".mySwiper2", {
+
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+            swiper: swiper,
+        },
+    });
+</script>
