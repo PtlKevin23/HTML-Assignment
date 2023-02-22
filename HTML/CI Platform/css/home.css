@@ -1,3 +1,16 @@
+
+html{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
 a{
     text-decoration: none;
 }
@@ -322,4 +335,27 @@ a{
     font-family: 'Noto Sans', sans-serif;
     margin: 10px;
     color: #6d6c6cbd;
+}
+
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .firstHeader{
+        gap: 25px;
+    }
+    
+    .firstHeader img{
+        margin-right: 30px;
+    }
+    
+    .firstHeader a{
+        height: 20px;
+        font-size: 13px;
+    }
+
+    .userContent{
+        margin-left: 220px;
+    }
+
 }
