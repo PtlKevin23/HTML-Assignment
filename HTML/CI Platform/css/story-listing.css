@@ -1,0 +1,255 @@
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.firstHeader {
+    gap: 30px;
+}
+
+.firstHeader img {
+    margin-right: 50px;
+}
+
+.firstHeader a {
+    height: 22px;
+    font-size: 16px;
+    color: #333333;
+    opacity: 1;
+}
+
+.btnCustom {
+    font-size: 16px;
+    color: #333333;
+    background-color: #fff;
+    border: none;
+    opacity: 1;
+}
+
+.btn:hover {
+    color: #333333;
+    background-color: #fff;
+}
+
+.userContent {
+    margin-left: 350px;
+}
+
+.userContent #notification {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #fff;
+    border: #fff;
+}
+
+.imgIcon {
+    margin-left: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.filterNav {
+    border: 0.5px solid;
+    border-color: rgba(51, 51, 51, 0.1);
+    border-top: none;
+    border-bottom: none;
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.main-image {
+    width: 100vw;
+    height: 400px;
+    background-image: url(/CI\ Platform/images/Grow-Trees-On-the-path-to-environment-sustainability.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    filter: brightness(70%);
+    position: relative;
+}
+
+.share-story {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.share-story p {
+    color: #fff;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 17px;
+    margin-top: 13%;
+}
+
+.share-story-button {
+    position: absolute;
+    top: 60%;
+}
+
+.main-image button {
+    height: 55px;
+    padding: 0px 20px;
+    width: auto;
+    border-radius: 30px;
+    border: 3px solid #fff;
+    background-color: #33333315;
+    color: #fff;
+}
+
+.main-image>button {
+    filter: brightness(100%);
+}
+
+
+
+
+.missionCard {
+    margin-top: 50px;
+}
+
+.card {
+    position: relative;
+}
+
+.theme-detail {
+    position: absolute;
+    top: 49%;
+    left: 36%;
+}
+
+.theme-name {
+    font-size: 15px;
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0px 8px;
+    padding: 4px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.card img {
+    background-color: #000000;
+}
+
+.card:hover>img {
+    filter: brightness(60%);
+}
+
+.card:hover {
+    box-shadow: 1px 1px 10px -2px rgba(78, 78, 78, 0.904);
+}
+
+
+.card-title {
+    margin-top: 10px;
+    font-size: 26px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+}
+
+.card-text {
+    font-size: 15px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
+}
+
+
+
+.volunteer-image img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.volunteer-name {
+    display: flex;
+    align-items: center;
+}
+
+.volunteer-name span {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+}
+
+.view-detail-button {
+    position: absolute;
+    top: 20%;
+    left: 32%;
+}
+
+
+
+.view-detail-button button {
+    height: 55px;
+    padding: 0px 20px;
+    width: auto;
+    /* display: none; */
+    opacity: 0;
+    border-radius: 30px;
+    border: 3px solid #fff;
+    background-color: #33333315;
+    color: #fff;
+}
+
+.card:hover button {
+    /* display: block; */
+    opacity: 1;
+}
+
+
+
+
+.pages {
+    margin-top: 50px;
+}
+
+.pages ul {
+    justify-content: center;
+    gap: 15px;
+}
+
+.page-link {
+    background-color: #fff;
+    color: #000000;
+}
+
+.active-page {
+    background-color: #F88634;
+    width: 35px;
+    text-align: center;
+    padding: 6px;
+}
+
+.bottomLine {
+    margin-top: 50px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.footer #leftLinks a {
+    font-family: 'Noto Sans', sans-serif;
+    margin: 10px;
+    color: #6d6c6cbd;
+}
