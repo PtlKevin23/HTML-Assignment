@@ -2,852 +2,827 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" class="rel" />
-    <link rel="stylesheet" href="css/home.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/homestyle.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Home</title>
+
+    <script>
+        function addItem(value) {
+            var item = document.getElementById("searchFilter").value;
+            document.getElementById("filterapplied").insertAdjacentHTML("beforeend",
+                '<div class="border border-dark-subtle my-2 mx-1 rounded-4 py-1 px-3 d-flex flex-row align-center"><span class="pb-0">' + value + '</span>     <button onclick="this.parentElement.remove()" class="ms-1 btn-close"></button></div>');
+            var item = document.getElementById("searchFilter").value = "";
+        }
+        function deleteItem(value) {
+            console.log(value)
+            const element = document.getElementById(value);
+            element.remove();
+        }
+        
+        function gridlistview(id, view) {
+            if (view == 'grid') {
+                console.log(id, view)
+                document.getElementById('missioncardsgrid').style.display = 'block';
+                document.getElementById('missioncardlist').style.display = 'none';
+            }
+            else {
+                document.getElementById('missioncardsgrid').style.display = 'none';
+                document.getElementById('missioncardlist').style.display = 'block';
+            }
+        }
+    </script>
+
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="row">
+    <!-- -------------------- First Header -------------------- -->
+    <div id="first-header" class="col-xl-8 col-lg-12 navbar navbar-expand-lg">
 
-            <div class="col-6 d-flex align-items-center firstHeader">
+        <div class="container-fluid col-sm-8">
 
-                <img src="images/logo.png" alt="">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle btnCustom" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Explore
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Explore item 1</a></li>
-                        <li><a class="dropdown-item" href="#">Explore item 2</a></li>
-                    </ul>
-                </div>
-                <a href="#">Stories</a>
-                <a href="#">News</a>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle btnCustom" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Policy
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Privacy Policy</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+            <button id="menuicon" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <svg width="25" height="25" fill="currentColor" class="bi   bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                </svg>
+            </button>
+
+            <div class="collapse navbar-collapse w-sm-100" id="navbarNav">
+
+                <div id="top-bar-left" class="d-sm-block w-100 d-lg-flex justify-content-center ">
+                    <div class="my-auto mx-sm-auto mx-lg-5">
+                        <a asp-action="Storylisting" class="m-auto d-flex justify-content-center">
+                            Stories
+                        </a>
+                    </div>
+                    <div class="dropdown show my-auto d-flex flex-wrap justify-content-center">
+                        <a class="dropdown-button text-dark btn btn-white mx-1 my-2 px-3 dropdown-toggle" href="#"
+                            role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Policy
+                        </a>
+                        <div id="PolicyDropdown" class="dropdown-menu w-100 " aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" id="India" href="#">India</a>
+                            <a class="dropdown-item" id="America" href="#">America</a>
+                            <a class="dropdown-item" id="Canada" href="#">Canada</a>
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
-            <div class="col-6 py-2">
-                <div class="d-flex align-items-center float-right userContent">
+        </div>
 
-                    <button id="notification"><img src="images/bell.png" alt=""></button>
-                    <div><img src="images/user-img.png" alt="" class="imgIcon"></div>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle btnCustom" type="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Evan Donohue
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">My Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
-                        </ul>
-                    </div>
+        <div id="profileblock">
+
+            <div id="profilepicblock">
+                <img src="images/user-img.png" class="" alt="" srcset="">
+            </div>
+            <div class="dropdown show">
+                <a class="dropdown-button text-dark btn btn-white mx-1 my-2 px-3 dropdown-toggle" href="#" role="text"
+                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Evan Donohue
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">My Profile</a>
+                    <a class="dropdown-item" href="#">Volunteering Timesheet</a>
+                    <a class="dropdown-item" href="#">Logout</a>
                 </div>
             </div>
         </div>
+
     </div>
 
-    <hr class="line mt-1 mb-0">
+    <span class="w-100 border border-lightsubtle" style="display: block;height: 0px;width: 100%"></span>
 
-    <div class="container navContainer">
-        <div class="row">
+    <!-- -------------------- Second Header -------------------- -->
+    <div id="second-header" class="col-xl-8 col-lg-12 justify-content-lg-evenly flex-lg-row">
 
-            <div class="col-6 d-flex align-items-center">
-
+        <div id="search">
+            <button class="dropdown-button btn btn-white mx-1 my-2 px-3" type="submit">
                 <img src="images/search.png" alt="Search" class="searchIcon">
-
-                <nav class="navbar">
-                    <div class="container-fluid">
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search mission..."
-                                aria-label="Search">
-                        </form>
-                    </div>
-                </nav>
-
-            </div>
-
-            <div class="col-6 d-flex align-items-center">
-
-                <div class="dropdown col-3 filterNav">
-                    <button class="btn btn-secondary dropdown-toggle btnCustom" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Country
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Canada</a></li>
-                        <li><a class="dropdown-item" href="#">India</a></li>
-                        <li><a class="dropdown-item" href="#">United States of America</a></li>
-                    </ul>
-                </div>
-
-                <div class="dropdown col-3 filterNav">
-                    <button class="btn btn-secondary dropdown-toggle btnCustom" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        City
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Ahmedabad</a></li>
-                        <li><a class="dropdown-item" href="#">Rajkot</a></li>
-                        <li><a class="dropdown-item" href="#">Surat</a></li>
-                    </ul>
-                </div>
-
-                <div class="dropdown col-3 filterNav">
-                    <button class="btn btn-secondary dropdown-toggle btnCustom" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Theme
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#"></a></li>
-                    </ul>
-                </div>
-
-                <div class="dropdown col-3 filterNav">
-                    <button class="btn btn-secondary dropdown-toggle btnCustom" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Skills
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#"></a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-    <hr class="line mt-0">
-
-    <div class="container mainContaint">
-
-        <div class="mainHeading">
-            <span id="lightHeading">Explore</span>
-            <span id="missionCount">72 Missions</span>
+            </button>
+            <input class="form-control border-white ms-sm-2" type="search" id="searchFilter"
+                placeholder="Search Mission..." aria-label="Search">
         </div>
 
-        <div class="sortview">
+        <div id="second-header-right" class="border border-top-0 w-100 flex-sm-row justify-content-sm-center">
 
-            <div class="dropdown col-3 sortBy">
-                <button class="btn btn-secondary dropdown-toggle btnCustom" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Sort by
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Country</a></li>
-                    <li><a class="dropdown-item" href="#">City</a></li>
-                    <li><a class="dropdown-item" href="#">Theme</a></li>
-                    <li><a class="dropdown-item" href="#">Skill</a></li>
+            <div class="dropdown border border-top-0 w-100">
+                <a class="dropdown-button btn btn-white mx-1 my-2 px-3 dropdown-toggle" href="#" role="button"
+                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Country
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li class="dropdown-item" id="India" onclick="addItem('India')" href="#">India</li>
+                    <li class="dropdown-item" id="Anerica" onclick="addItem('Anerica')" href="#">America</li>
+                    <li class="dropdown-item" id="Canada" onclick="addItem('Canada')" href="#">Canada</li>
                 </ul>
             </div>
 
-            <div class="view">
-                <div class="gridIcon"><img src="images/grid.png" alt=""></div>
-                <div>
-                    <button class="listIcon"><a href="listView.html"><i class="fa fa-bars"></i></a></button>
-                </div>
+            <div class="dropdown border border-top-0 w-100">
+                <a class=" dropdown-button btn btn-white mx-1 my-2 px-3 dropdown-toggle" href="#" role="button"
+                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    City
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li class="dropdown-item" id="India" onclick="addItem('India')" href="#">India</li>
+                    <li class="dropdown-item" id="Anerica" onclick="addItem('Anerica')" href="#">America</li>
+                    <li class="dropdown-item" id="Canada" onclick="addItem('Canada')" href="#">Canada</li>
+                </ul>
+            </div>
+
+            <div class="dropdown border border-top-0 w-100">
+                <a class="dropdown-button btn btn-white mx-1 my-2 px-3 dropdown-toggle" href="#" role="button"
+                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Theme
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li class="dropdown-item" id="Envirnoment" onclick="addItem('Envirnoment')" href="#">Envirnoment
+                    </li>
+                    <li class="dropdown-item" id="Children" onclick="addItem('Children')" href="#">Children</li>
+                    <li class="dropdown-item" id="Animals" onclick="addItem('Animals')" href="#">Animals</li>
+                    <li class="dropdown-item" id="Nutrition" onclick="addItem('Nutrition')" href="#">Nutrition</li>
+                </ul>
+            </div>
+
+            <div class="dropdown border border-top-0 w-100">
+                <a class="dropdown-button btn btn-white mx-1 my-2 px-3 dropdown-toggle" href="#" role="button"
+                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Skills
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li class="dropdown-item" id="Developer" onclick="addItem('Developer')" href="#">Developer</li>
+                    <li class="dropdown-item" id="UI" onclick="addItem('UI')" href="#">UI</li>
+                    <li class="dropdown-item" id="Designer" onclick="addItem('Designer')" href="#">Designer</li>
+                    <li class="dropdown-item" id="QA" onclick="addItem('QA')" href="#">QA</li>
+                </ul>
             </div>
 
         </div>
 
     </div>
 
-    <div class="container missionCard">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
 
-            <!-- --------------------First Card ------------------------->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="images/Grow-Trees-On-the-path-to-environment-sustainability-2.png" class="card-img-top"
-                        alt="...">
-                    <div class="d-flex align-items-center theme-detail">
-                        <hr class="flex-grow-1" />
-                        <div class="theme-name">Environment</div>
-                        <hr class="flex-grow-1" />
-                    </div>
-                    <span id="location">
-                        <img src="images/pin.png" alt="#"> Toronto
-                    </span>
-                    <button id="likeBtn" class="btn" type="button">
-                        <img src="images/heart.png" alt="#">
-                    </button>
-                    <button id="saveBtn" class="btn" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
-                            class="bi bi-square-fill" viewBox="0 0 16 16">
-                            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
-                        </svg>
-                    </button>
-                    <div class="card-body">
-                        <h5 class="card-title">Grow Trees - On the path to environment sustainability</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore...</p>
-                        <div class="organizor-detail">
-                            <span id="organizer">Tree Canada</span>
-                            <div id="rating">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/star.png" alt="#">
-                                <img src="images/star.png" alt="#">
-                            </div>
-                        </div>
+    <span class="w-100 border border-lightsubtle " style="display: block;height: 0px;width: 100%"></span>
 
-                        <div class="py-3 d-flex align-items-center">
-                            <hr class="flex-grow-1" />
-                            <div class="duration">From 10/01/2019 until 25/02/2019</div>
-                            <hr class="flex-grow-1" />
-                        </div>
+    <!-- filter applied -->
+    <div id="filterapplied" class="col-xl-8 col-lg-12 d-flex p-0 mx-auto w-100 flex-wrap ms-lg-5 ps-lg-5">
 
-                        <div class="row">
-                            <div class="col-6 numaricDetail">
-                                <div>
-                                    <img src="images/Already-volunteered.png" alt="#">
-                                </div>
-                                <div id="numbers">
-                                    <h4>250</h4>
-                                    <p>Already volunteered</p>
-                                </div>
-                            </div>
-                            <div class="col-6 numaricDetail">
-                                <div>
-                                    <img src="images/deadline.png" alt="#">
-                                </div>
-                                <div id="numbers">
-                                    <h4>09/01/2019</h4>
-                                    <p>Deadline</p>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="line mt-1 mb-0">
-                        <div id="applyBtn">
-                            <button class="btnCustom" type="button">Apply
-                                <img src="images/right-arrow.png" alt="">
-                            </button>
-                        </div>
-                    </div>
-                </div>
+    </div>
+    <!-- mission -->
+    <div class="container mission col-xl-8 col-lg-12">
+        <!-- mission top bar -->
+        <div class="mission-detail">
+            <div class="mission-count text-center align-center text-wrap">
+                <h3 class="text-muted fs-3 fw-normal m-0">Explore</h3>
+                <h2 id="mission-count" class="m-0 fs-3 ">73</h2>
+                <h2 class="m-0 fs-3">Missions</h2>
             </div>
-
-            <!-- --------------------Second Card -------------------------->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="images/Education-Supplies-for-Every--Pair-of-Shoes-Sold-2.png" class="card-img-top"
-                        alt="...">
-                    <div class="d-flex align-items-center theme-detail">
-                        <hr class="flex-grow-1" />
-                        <div class="theme-name">Children</div>
-                        <hr class="flex-grow-1" />
-                    </div>
-                    <span id="location">
-                        <img src="images/pin.png" alt="#"> Melbourne
-                    </span>
-                    <button id="likeBtn" class="btn" type="button">
-                        <img src="images/heart.png" alt="#">
-                    </button>
-                    <button id="saveBtn" class="btn" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
-                            class="bi bi-square-fill" viewBox="0 0 16 16">
-                            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
-                        </svg>
-                    </button>
-                    <div class="card-body">
-                        <h5 class="card-title">Education Supplies for Every Pair of Shoes Sold</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore...</p>
-                        <div class="organizor-detail">
-                            <span id="organizer">Tree Canada</span>
-                            <div id="rating">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/star.png" alt="#">
-                                <img src="images/star.png" alt="#">
-                            </div>
-                        </div>
-
-                        <div class="py-3 d-flex align-items-center">
-                            <hr class="flex-grow-1" />
-                            <div class="duration">From 10/01/2019 until 25/02/2019</div>
-                            <hr class="flex-grow-1" />
-                        </div>
-
-                        <div class="row">
-                            <div class="col-6 numaricDetail">
-                                <div>
-                                    <img src="images/Already-volunteered.png" alt="#">
-                                </div>
-                                <div id="numbers">
-                                    <h4>250</h4>
-                                    <p>Already volunteered</p>
-                                </div>
-                            </div>
-                            <div class="col-6 numaricDetail">
-                                <div>
-                                    <img src="images/deadline.png" alt="#">
-                                </div>
-                                <div id="numbers">
-                                    <h4>09/01/2019</h4>
-                                    <p>Deadline</p>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="line mt-1 mb-0">
-                        <div id="applyBtn">
-                            <button class="btnCustom" type="button">Apply
-                                <img src="images/right-arrow.png" alt="">
-                            </button>
-                        </div>
-                    </div>
+            <div class="d-flex">
+                <div class="dropdown show border rounded-3 my-auto  " data-toggle="dropdown" style="width: 160px;">
+                    <a class="dropdown-landingpage text-dark btn  my-2 px-3 py-0" href="#" role="button"
+                        id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+                        Sort by
+                    </a>
+                    <a class="dropdown-toggle float-right align-center px-3 pt-2 py-0"></a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li class="dropdown-item" id="Developer" onclick="addItem('Developer')" href="#">Developer
+                        </li>
+                        <li class="dropdown-item" id="UI" onclick="addItem('UI')" href="#">UI</li>
+                        <li class="dropdown-item" id="Designer" onclick="addItem('Designer')" href="#">Designer</li>
+                        <li class="dropdown-item" id="QA" onclick="addItem('QA')" href="#">QA</li>
+                    </ul>
                 </div>
-            </div>
-
-            <!-- --------------------Third Card ------------------------->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="images/Nourish-the-Children-in--African-country-1.png" class="card-img-top" alt="...">
-                    <div class="d-flex align-items-center theme-detail">
-                        <hr class="flex-grow-1" />
-                        <div class="theme-name">Nutrition</div>
-                        <hr class="flex-grow-1" />
-                    </div>
-                    <span id="location">
-                        <img src="images/pin.png" alt="#"> Barcelona
-                    </span>
-                    <button id="likeBtn" class="btn" type="button">
-                        <img src="images/heart.png" alt="#">
+                <div class="d-flex flex-row">
+                    <button onclick="gridlistview('missioncardlist' ,'grid')"
+                        class="border btn rounded-5 ms-3 my-auto ">
+                        <img class="" width="25px" id="gridview" src="images/grid.png" alt="" srcset="">
                     </button>
-                    <button id="saveBtn" class="btn" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
-                            class="bi bi-square-fill" viewBox="0 0 16 16">
-                            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
-                        </svg>
+                    <button onclick="gridlistview('missioncardsgrid','list')" class="border btn rounded-5 mx-3 my-auto">
+                        <img id="listview" class=" " src="images/list.png" alt="" srcset="">
                     </button>
-                    <div class="card-body">
-                        <h5 class="card-title">Grow Trees - On the path to environment sustainability</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore...</p>
-                        <div class="organizor-detail">
-                            <span id="organizer">Tree Canada</span>
-                            <div id="rating">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/star.png" alt="#">
-                                <img src="images/star.png" alt="#">
-                            </div>
-                        </div>
-
-                        <div class="py-3 d-flex align-items-center">
-                            <hr class="flex-grow-1" />
-                            <div class="duration">From 10/01/2019 until 25/02/2019</div>
-                            <hr class="flex-grow-1" />
-                        </div>
-
-                        <div class="row">
-                            <div class="col-6 numaricDetail">
-                                <div>
-                                    <img src="images/Already-volunteered.png" alt="#">
-                                </div>
-                                <div id="numbers">
-                                    <h4>250</h4>
-                                    <p>Already volunteered</p>
-                                </div>
-                            </div>
-                            <div class="col-6 numaricDetail">
-                                <div>
-                                    <img src="images/deadline.png" alt="#">
-                                </div>
-                                <div id="numbers">
-                                    <h4>09/01/2019</h4>
-                                    <p>Deadline</p>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="line mt-1 mb-0">
-                        <div id="applyBtn">
-                            <button class="btnCustom" type="button">Apply
-                                <img src="images/right-arrow.png" alt="">
-                            </button>
-                        </div>
-                    </div>
                 </div>
+
             </div>
+        </div>
+        <!-- mission card-img-top -->
 
-            <!-- --------------------Fourth Card ------------------------->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="images/CSR-initiative-stands-for-Coffee--and-Farmer-Equity-3.png" class="card-img-top"
-                        alt="...">
-                    <div class="d-flex align-items-center theme-detail">
-                        <hr class="flex-grow-1" />
-                        <div class="theme-name">Environment</div>
-                        <hr class="flex-grow-1" />
-                    </div>
-                    <span id="location">
-                        <img src="images/pin.png" alt="#"> London
-                    </span>
-                    <button id="likeBtn" class="btn" type="button">
-                        <img src="images/heart.png" alt="#">
-                    </button>
-                    <button id="saveBtn" class="btn" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
-                            class="bi bi-square-fill" viewBox="0 0 16 16">
-                            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
-                        </svg>
-                    </button>
-                    <div class="card-body">
-                        <h5 class="card-title">Grow Trees - On the path to environment sustainability</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore...</p>
-                        <div class="organizor-detail">
-                            <span id="organizer">Tree Canada</span>
-                            <div id="rating">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/star.png" alt="#">
-                                <img src="images/star.png" alt="#">
-                            </div>
+        <div class="missions">
+
+            <div id="missioncardsgrid">
+
+                <div class="missioncardsgrid d-flex justify-content-evenly flex-wrap">
+                    <div class="card my-2" style="width: 24rem;">
+                        <img src="images/Nourish-the-Children-in--African-country.png" class="card-img-top" alt="...">
+                        <div
+                            class="missioncountry px-3 text-white position-absolute top-0 end-0 me-2 mt-2 p-1 border rounded-5  d-flex flex-nowrap d-block left-2">
+                            <img class="pe-2" src="images/pin.png" alt="" srcset="">
+                            Toronto
+                        </div>
+                        <div
+                            class="missionheart  text-white position-absolute  rounded-circle  d-flex flex-nowrap d-block left-2">
+                            <img class="" src="images/heart.png" alt="" srcset="">
+                        </div>
+                        <div
+                            class="missionuser  text-white position-absolute  rounded-circle  d-flex flex-nowrap d-block left-2">
+                            <img class="" src="images/user.png" alt="" srcset="">
                         </div>
 
-                        <div class="py-3 d-flex align-items-center">
-                            <hr class="flex-grow-1" />
-                            <div class="duration">From 10/01/2019 until 25/02/2019</div>
-                            <hr class="flex-grow-1" />
+                        <div class="w-100 missiontheme position-relative d-flex justify-content-center">
+                            <p class="m-0 bg-light border rounded-5 px-2">Envirnoment</p>
                         </div>
-
-                        <div class="row">
-                            <div class="col-6 numaricDetail">
-                                <div>
-                                    <img src="images/Already-volunteered.png" alt="#">
-                                </div>
-                                <div id="numbers">
-                                    <h4>250</h4>
-                                    <p>Already volunteered</p>
+                        <div class="mx-3">
+                            <h5 class="card-titl  fs-5">Education supplies for every pair of shoes sold</h5>
+                            <p class="missionshortdesc card-text text-muted">Some quick example text to build on the
+                                card title and make up the bulk
+                                of the card's content.</p>
+                            <div class="d-flex flex-nowrap justify-content-between">
+                                <p class="text-muted d-flex mb-0">Australian Paradise</p>
+                                <div class="d-flex">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/star.png" alt="" srcset="">
+                                    <img src="images/star.png" alt="" srcset="">
                                 </div>
                             </div>
-                        </div>
-                        <hr class="line mt-1 mb-0">
-                        <div id="applyBtn">
-                            <button class="btnCustom" type="button">Apply
-                                <img src="images/right-arrow.png" alt="">
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- --------------------Fifth Card ------------------------->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="images/Animal-welfare-_-save-birds-campaign-1.png" class="card-img-top" alt="...">
-                    <div class="d-flex align-items-center theme-detail">
-                        <hr class="flex-grow-1" />
-                        <div class="theme-name">Animals</div>
-                        <hr class="flex-grow-1" />
-                    </div>
-                    <span id="location">
-                        <img src="images/pin.png" alt="#"> Cape Town
-                    </span>
-                    <button id="likeBtn" class="btn" type="button">
-                        <img src="images/heart.png" alt="#">
-                    </button>
-                    <button id="saveBtn" class="btn" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
-                            class="bi bi-square-fill" viewBox="0 0 16 16">
-                            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
-                        </svg>
-                    </button>
-                    <div class="card-body">
-                        <h5 class="card-title">Grow Trees - On the path to environment sustainability</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore...</p>
-                        <div class="organizor-detail">
-                            <span id="organizer">Tree Canada</span>
-                            <div id="rating">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/star.png" alt="#">
-                                <img src="images/star.png" alt="#">
+                            <br>
+                            <span class="w-100 border border-top-0 border-lightsubtle "
+                                style="display: block;height: 0px;width: 100%"></span>
+                            <div class="w-100 missiontheme position-relative d-flex justify-content-center">
+                                <p class="m-0 bg-light border rounded-5 px-2">From</p>
                             </div>
-                        </div>
-
-                        <div class="py-3 d-flex align-items-center">
-                            <hr class="flex-grow-1" />
-                            <div class="duration">From 10/01/2019 until 25/02/2019</div>
-                            <hr class="flex-grow-1" />
-                        </div>
-
-                        <div class="row">
-                            <div class="col-4 numaricDetail">
-                                <div>
-                                    <img src="images/Already-volunteered.png" alt="#">
+                            <div class="w-100 d-flex flex-row">
+                                <div class="w-50 d-flex flex-row">
+                                    <div class="d-flex justify-content-center flex-column">
+                                        <img src="images/Seats-left.png" alt="" srcset="">
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <p class="mb-0 ms-3 fs-6">10</p>
+                                        <p class="mb-0 text-muted fs-6 ms-3">Seats Left</p>
+                                    </div>
                                 </div>
-                                <div id="numbers">
-                                    <h4>10</h4>
-                                    <p>Seats left</p>
-                                </div>
-                            </div>
-                            <div class="col-8 numaricDetail">
-                                <div>
-                                    <img src="images/achieved.png" alt="#">
-                                </div>
-                                <div id="progress">
-                                    <div class="progress-bar"></div>
-                                    <div>
-                                        <span>8000 Achieved</span>
+                                <div class="w-50 d-flex flex-row">
+                                    <div class="d-flex justify-content-center flex-column">
+                                        <img src="images/deadline.png" alt="" srcset="">
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <p class="mb-0 ms-3 fs-6">10/23/2019</p>
+                                        <p class="mb-0 text-muted fs-6 ms-3">Deadline</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <hr class="line mt-1 mb-0">
-                        <div id="applyBtn">
-                            <button class="btnCustom" type="button">Apply
-                                <img src="images/right-arrow.png" alt="">
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- --------------------Sixth Card ------------------------->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="images/Plantation-and-Afforestation-programme-1.png" class="card-img-top" alt="...">
-                    <div class="d-flex align-items-center theme-detail">
-                        <hr class="flex-grow-1" />
-                        <div class="theme-name">Health</div>
-                        <hr class="flex-grow-1" />
-                    </div>
-                    <span id="location">
-                        <img src="images/pin.png" alt="#"> Paris
-                    </span>
-                    <button id="likeBtn" class="btn" type="button">
-                        <img src="images/heart.png" alt="#">
-                    </button>
-                    <button id="saveBtn" class="btn" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
-                            class="bi bi-square-fill" viewBox="0 0 16 16">
-                            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
-                        </svg>
-                    </button>
-                    <div class="card-body">
-                        <h5 class="card-title">Grow Trees - On the path to environment sustainability</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore...</p>
-                        <div class="organizor-detail">
-                            <span id="organizer">Tree Canada</span>
-                            <div id="rating">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/star.png" alt="#">
-                                <img src="images/star.png" alt="#">
+                            <span class="w-100 border border-lightsubtle "
+                                style="display: block;height: 0px;width: 100%"></span>
+                            <div class="d-flex justify-content-center ">
+                                <a class=" missionbtn border-0" asp-controller="HTML"
+                                    asp-action="VolunteeringMissionPage"> <button
+                                        class="missionbtn align-self-center rounded-5 btn  mx-auto my-3"> submit
+                                        <svg class="ms-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                        </svg>
+                                    </button></a>
                             </div>
                         </div>
-
-                        <div class="py-3 d-flex align-items-center">
-                            <hr class="flex-grow-1" />
-                            <div class="duration">From 10/01/2019 until 25/02/2019</div>
-                            <hr class="flex-grow-1" />
+                    </div>
+                    <div class="card my-2" style="width: 24rem;">
+                        <img src="images/Nourish-the-Children-in--African-country.png" class="card-img-top" alt="...">
+                        <div
+                            class="missioncountry px-3 text-white position-absolute top-0 end-0 me-2 mt-2 p-1 border rounded-5  d-flex flex-nowrap d-block left-2">
+                            <img class="pe-2" src="images/pin.png" alt="" srcset="">
+                            Toronto
+                        </div>
+                        <div
+                            class="missionheart  text-white position-absolute  rounded-circle  d-flex flex-nowrap d-block left-2">
+                            <img class="" src="images/heart.png" alt="" srcset="">
+                        </div>
+                        <div
+                            class="missionuser  text-white position-absolute  rounded-circle  d-flex flex-nowrap d-block left-2">
+                            <img class="" src="images/user.png" alt="" srcset="">
                         </div>
 
-                        <div class="row">
-                            <div class="col-8 numaricDetail">
-                                <div>
-                                    <img src="images/achieved.png" alt="#">
+                        <div class="w-100 missiontheme position-relative d-flex justify-content-center">
+                            <p class="m-0 bg-light border rounded-5 px-2">Envirnoment</p>
+                        </div>
+                        <div class="mx-3">
+                            <h5 class="card-titl  fs-5">Education supplies for every pair of shoes sold</h5>
+                            <p class="missionshortdesc card-text text-muted">Some quick example text to build on the
+                                card title and make up the bulk
+                                of the card's content.</p>
+                            <div class="d-flex flex-nowrap justify-content-between">
+                                <p class="text-muted d-flex mb-0">Australian Paradise</p>
+                                <div class="d-flex">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/star.png" alt="" srcset="">
+                                    <img src="images/star.png" alt="" srcset="">
                                 </div>
-                                <div id="progress">
-                                    <div class="progress-bar"></div>
-                                    <div>
-                                        <span>8000 Achieved</span>
+                            </div>
+
+                            <br>
+                            <span class="w-100 border border-top-0 border-lightsubtle "
+                                style="display: block;height: 0px;width: 100%"></span>
+                            <div class="w-100 missiontheme position-relative d-flex justify-content-center">
+                                <p class="m-0 bg-light border rounded-5 px-2">Envirnoment</p>
+                            </div>
+                            <div class="w-100 d-flex flex-row">
+                                <div class="w-50 d-flex flex-row">
+                                    <div class="d-flex justify-content-center flex-column">
+                                        <img src="images/Seats-left.png" alt="" srcset="">
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <p class="mb-0 ms-3 fs-6">10</p>
+                                        <p class="mb-0 text-muted fs-6 ms-3">Seats Left</p>
+                                    </div>
+                                </div>
+                                <div class="w-50 d-flex flex-row">
+                                    <div class="d-flex justify-content-center flex-column">
+                                        <img src="images/deadline.png" alt="" srcset="">
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <p class="mb-0 ms-3 fs-6">10/23/2019</p>
+                                        <p class="mb-0 text-muted fs-6 ms-3">Deadline</p>
                                     </div>
                                 </div>
                             </div>
+                            <span class="w-100 border border-lightsubtle "
+                                style="display: block;height: 0px;width: 100%"></span>
+                            <button class="missionbtn d-block btn rounded-5 text- mx-auto my-3">Apply
+                                <svg class="ms-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                </svg>
+                            </button>
                         </div>
-                        <hr class="line mt-1 mb-0">
-                        <div id="applyBtn">
-                            <button class="btnCustom" type="button">Apply
-                                <img src="images/right-arrow.png" alt="">
+                    </div>
+                    <div class="card my-2" style="width: 24rem;">
+                        <img src="images/Nourish-the-Children-in--African-country.png" class="card-img-top" alt="...">
+                        <div
+                            class="missioncountry px-3 text-white position-absolute top-0 end-0 me-2 mt-2 p-1 border rounded-5  d-flex flex-nowrap d-block left-2">
+                            <img class="pe-2" src="images/pin.png" alt="" srcset="">
+                            Toronto
+                        </div>
+                        <div
+                            class="missionheart  text-white position-absolute  rounded-circle  d-flex flex-nowrap d-block left-2">
+                            <img class="" src="images/heart.png" alt="" srcset="">
+                        </div>
+                        <div
+                            class="missionuser  text-white position-absolute  rounded-circle  d-flex flex-nowrap d-block left-2">
+                            <img class="" src="images/user.png" alt="" srcset="">
+                        </div>
+
+                        <div class="w-100 missiontheme position-relative d-flex justify-content-center">
+                            <p class="m-0 bg-light border rounded-5 px-2">Envirnoment</p>
+                        </div>
+                        <div class="mx-3">
+                            <h5 class="card-titl  fs-5">Education supplies for every pair of shoes sold</h5>
+                            <p class="missionshortdesc card-text text-muted">Some quick example text to build on the
+                                card title and make up the bulk
+                                of the card's content.</p>
+                            <div class="d-flex flex-nowrap justify-content-between">
+                                <p class="text-muted d-flex mb-0">Australian Paradise</p>
+                                <div class="d-flex">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/star.png" alt="" srcset="">
+                                    <img src="images/star.png" alt="" srcset="">
+                                </div>
+                            </div>
+
+                            <br>
+                            <span class="w-100 border border-top-0 border-lightsubtle "
+                                style="display: block;height: 0px;width: 100%"></span>
+                            <div class="w-100 missiontheme position-relative d-flex justify-content-center">
+                                <p class="m-0 bg-light border rounded-5 px-2">Envirnoment</p>
+                            </div>
+                            <div class="w-100 d-flex flex-row">
+                                <div class="w-50 d-flex flex-row">
+                                    <div class="d-flex justify-content-center flex-column">
+                                        <img src="images/Seats-left.png" alt="" srcset="">
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <p class="mb-0 ms-3 fs-6">10</p>
+                                        <p class="mb-0 text-muted fs-6 ms-3">Seats Left</p>
+                                    </div>
+                                </div>
+                                <div class="w-50 d-flex flex-row">
+                                    <div class="d-flex justify-content-center flex-column">
+                                        <img src="images/deadline.png" alt="" srcset="">
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <p class="mb-0 ms-3 fs-6">10/23/2019</p>
+                                        <p class="mb-0 text-muted fs-6 ms-3">Deadline</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="w-100 border border-lightsubtle "
+                                style="display: block;height: 0px;width: 100%"></span>
+                            <button class="missionbtn d-block btn rounded-5 text- mx-auto my-3">Apply
+                                <svg class="ms-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                </svg>
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- list view\ -->
+            <div style="display:none" id="missioncardlist">
 
-            <!-- --------------------Seventh Card ------------------------->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="images/Grow-Trees-On-the-path-to-environment-sustainability-2.png" class="card-img-top"
-                        alt="...">
-                    <div class="d-flex align-items-center theme-detail">
-                        <hr class="flex-grow-1" />
-                        <div class="theme-name">Education</div>
-                        <hr class="flex-grow-1" />
-                    </div>
-                    <span id="location">
-                        <img src="images/pin.png" alt="#"> New York
-                    </span>
-                    <button id="likeBtn" class="btn" type="button">
-                        <img src="images/heart.png" alt="#">
-                    </button>
-                    <button id="saveBtn" class="btn" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
-                            class="bi bi-square-fill" viewBox="0 0 16 16">
-                            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
-                        </svg>
-                    </button>
-                    <div class="card-body">
-                        <h5 class="card-title">Grow Trees - On the path to environment sustainability</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                            in reprehenderit...</p>
-                        <div class="organizor-detail">
-                            <span id="organizer">Tree Canada</span>
-                            <div id="rating">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/star.png" alt="#">
-                                <img src="images/star.png" alt="#">
+
+                <div class="missioncardlist d-flex flex-column justify-content-evenly flex-wrap">
+                    <div class="card my-2 d-flex flex-row">
+                        <div class="position-relative">
+                            <img src="images/Nourish-the-Children-in--African-country.png" class="card-img-top"
+                                alt="...">
+                            <div
+                                class="missioncountry px-3 text-white position-absolute top-0 end-0 me-2 mt-2 p-1 border rounded-5  d-flex flex-nowrap d-block left-2">
+                                <img class="pe-2" src="images/pin.png" alt="" srcset="">
+                                Toronto
+                            </div>
+                            <div
+                                class="missionheart  text-white position-absolute  rounded-circle  d-flex flex-nowrap d-block left-2">
+                                <img class="" src="images/heart.png" alt="" srcset="">
+                            </div>
+                            <div
+                                class="missionuser  text-white position-absolute  rounded-circle  d-flex flex-nowrap d-block left-2">
+                                <img class="" src="images/user.png" alt="" srcset="">
+                            </div>
+
+                            <div class="w-100 missiontheme position-relative d-flex justify-content-center">
+                                <p class="m-0 bg-light border rounded-5 px-2">Envirnoment</p>
                             </div>
                         </div>
+                        <div>
+                            <div class="w-100 d-flex flex-row justify-content-between">
+                                <div class="d-flex">
+                                    <div
+                                        class="missioncountry bg-white px-3 text-dark me-2 mt-2 p-1  d-flex flex-nowrap d-block left-2">
+                                        <img class="p-auto me-2" src="images/pin1.png" alt="" srcset="">
+                                        Toronto
+                                    </div>
+                                    <div
+                                        class="missioncountry bg-white px-3 text-dark me-2 mt-2 p-1  d-flex flex-nowrap d-block left-2">
+                                        <img class="p-auto me-2" src="images/web.png" alt="" srcset="">
+                                        ENvironment
+                                    </div>
+                                    <div
+                                        class="missioncountry bg-white px-3 text-dark me-2 mt-2 p-1  d-flex flex-nowrap d-block left-2">
+                                        <img class="p-auto me-2" src="images/organization.png" alt="" srcset="">
+                                        Smith International Carrinf Foundation
+                                    </div>
+                                </div>
+                                <div class="d-block m-2">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/star.png" alt="" srcset="">
+                                    <img src="images/star.png" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="mx-3">
+                                <h5 class="card-titl  fs-5">Education supplies for every pair of shoes sold</h5>
+                                <p class="missionshortdesc card-text text-muted">Some quick example text to build on the
+                                    card title and make up the bulk
+                                    of the card's content.</p>
+                                <div class="w-100 d-flex flex-row justify-content-between">
 
-                        <div class="py-3 d-flex align-items-center">
-                            <hr class="flex-grow-1" />
-                            <div class="duration">From 10/01/2019 until 25/02/2019</div>
-                            <hr class="flex-grow-1" />
+                                    <div class="d-flex flex-row justify-content-start">
+                                        <div class="  d-flex flex-row justify-content-center">
+                                            <div class="d-flex justify-content-center flex-column">
+                                                <img src="images/Seats-left.png" alt="" srcset="">
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <p class="mb-0 ms-3 fs-6">10</p>
+                                                <p class="mb-0 text-muted fs-6 ms-3">Seats Left</p>
+                                            </div>
+                                        </div>
+                                        <div class="  d-flex flex-row justify-content-center">
+                                            <div class="d-flex justify-content-center flex-column">
+                                                <img src="images/deadline.png" alt="" srcset="">
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <p class="mb-0 ms-3 fs-6">10/23/2019</p>
+                                                <p class="mb-0 text-muted fs-6 ms-3">Deadline</p>
+                                            </div>
+                                        </div>
+                                        <div class="  d-flex flex-row justify-content-center">
+                                            <div class="d-flex justify-content-center flex-column">
+                                                <img src="images/calender.png" alt="" srcset="">
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <p class="mb-0 ms-3 fs-6">from 01/09/2019</p>
+                                                <p class="mb-0 text-muted fs-6 ms-3">Until 01/12/2020</p>
+                                            </div>
+                                        </div>
+                                        <div class="  d-flex flex-row justify-content-center">
+                                            <div class="d-flex justify-content-center flex-column">
+                                                <img src="images/settings.png" alt="" srcset="">
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <p class="mb-0 ms-3 fs-6">Skills</p>
+                                                <p class="mb-0 text-muted fs-6 ms-3">Botany</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="missionbtn d-block btn rounded-5 my-auto py-1">Apply
+                                        <svg class="ms-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
                         </div>
+                    </div>
+                    <div class="card my-2 d-flex flex-row">
+                        <div class="position-relative">
+                            <img src="images/Nourish-the-Children-in--African-country.png" class="card-img-top"
+                                alt="...">
+                            <div
+                                class="missioncountry px-3 text-white position-absolute top-0 end-0 me-2 mt-2 p-1 border rounded-5  d-flex flex-nowrap d-block left-2">
+                                <img class="pe-2" src="images/pin.png" alt="" srcset="">
+                                Toronto
+                            </div>
+                            <div
+                                class="missionheart  text-white position-absolute  rounded-circle  d-flex flex-nowrap d-block left-2">
+                                <img class="" src="images/heart.png" alt="" srcset="">
+                            </div>
+                            <div
+                                class="missionuser  text-white position-absolute  rounded-circle  d-flex flex-nowrap d-block left-2">
+                                <img class="" src="images/user.png" alt="" srcset="">
+                            </div>
 
-                        <div id="applyBtn">
-                            <button class="btnCustom" type="button"> View Detail
-                                <img src="images/right-arrow.png" alt="">
-                            </button>
+                            <div class="w-100 missiontheme position-relative d-flex justify-content-center">
+                                <p class="m-0 bg-light border rounded-5 px-2">Envirnoment</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="w-100 d-flex flex-row justify-content-between">
+                                <div class="d-flex">
+                                    <div
+                                        class="missioncountry bg-white px-3 text-dark me-2 mt-2 p-1  d-flex flex-nowrap d-block left-2">
+                                        <img class="p-auto me-2" src="images/pin1.png" alt="" srcset="">
+                                        Toronto
+                                    </div>
+                                    <div
+                                        class="missioncountry bg-white px-3 text-dark me-2 mt-2 p-1  d-flex flex-nowrap d-block left-2">
+                                        <img class="p-auto me-2" src="images/web.png" alt="" srcset="">
+                                        ENvironment
+                                    </div>
+                                    <div
+                                        class="missioncountry bg-white px-3 text-dark me-2 mt-2 p-1  d-flex flex-nowrap d-block left-2">
+                                        <img class="p-auto me-2" src="images/organization.png" alt="" srcset="">
+                                        Smith International Carrinf Foundation
+                                    </div>
+                                </div>
+                                <div class="d-block m-2">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/star.png" alt="" srcset="">
+                                    <img src="images/star.png" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="mx-3">
+                                <h5 class="card-titl  fs-5">Education supplies for every pair of shoes sold</h5>
+                                <p class="missionshortdesc card-text text-muted">Some quick example text to build on the
+                                    card title and make up the bulk
+                                    of the card's content.</p>
+                                <div class="w-100 d-flex flex-row justify-content-between">
+
+                                    <div class="d-flex flex-row justify-content-start">
+                                        <div class="  d-flex flex-row justify-content-center">
+                                            <div class="d-flex justify-content-center flex-column">
+                                                <img src="images/Seats-left.png" alt="" srcset="">
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <p class="mb-0 ms-3 fs-6">10</p>
+                                                <p class="mb-0 text-muted fs-6 ms-3">Seats Left</p>
+                                            </div>
+                                        </div>
+                                        <div class="  d-flex flex-row justify-content-center">
+                                            <div class="d-flex justify-content-center flex-column">
+                                                <img src="images/deadline.png" alt="" srcset="">
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <p class="mb-0 ms-3 fs-6">10/23/2019</p>
+                                                <p class="mb-0 text-muted fs-6 ms-3">Deadline</p>
+                                            </div>
+                                        </div>
+                                        <div class="  d-flex flex-row justify-content-center">
+                                            <div class="d-flex justify-content-center flex-column">
+                                                <img src="images/calender.png" alt="" srcset="">
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <p class="mb-0 ms-3 fs-6">from 01/09/2019</p>
+                                                <p class="mb-0 text-muted fs-6 ms-3">Until 01/12/2020</p>
+                                            </div>
+                                        </div>
+                                        <div class="  d-flex flex-row justify-content-center">
+                                            <div class="d-flex justify-content-center flex-column">
+                                                <img src="images/settings.png" alt="" srcset="">
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <p class="mb-0 ms-3 fs-6">Skills</p>
+                                                <p class="mb-0 text-muted fs-6 ms-3">Botany</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="missionbtn d-block btn rounded-5 my-auto py-1">Apply
+                                        <svg class="ms-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card my-2 d-flex flex-row">
+                        <div class="position-relative">
+                            <img src="images/Nourish-the-Children-in--African-country.png" class="card-img-top"
+                                alt="...">
+                            <div
+                                class="missioncountry px-3 text-white position-absolute top-0 end-0 me-2 mt-2 p-1 border rounded-5  d-flex flex-nowrap d-block left-2">
+                                <img class="pe-2" src="images/pin.png" alt="" srcset="">
+                                Toronto
+                            </div>
+                            <div
+                                class="missionheart  text-white position-absolute  rounded-circle  d-flex flex-nowrap d-block left-2">
+                                <img class="" src="images/heart.png" alt="" srcset="">
+                            </div>
+                            <div
+                                class="missionuser  text-white position-absolute  rounded-circle  d-flex flex-nowrap d-block left-2">
+                                <img class="" src="images/user.png" alt="" srcset="">
+                            </div>
+
+                            <div class="w-100 missiontheme position-relative d-flex justify-content-center">
+                                <p class="m-0 bg-light border rounded-5 px-2">Envirnoment</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="w-100 d-flex flex-row justify-content-between">
+                                <div class="d-flex">
+                                    <div
+                                        class="missioncountry bg-white px-3 text-dark me-2 mt-2 p-1  d-flex flex-nowrap d-block left-2">
+                                        <img class="p-auto me-2" src="images/pin1.png" alt="" srcset="">
+                                        Toronto
+                                    </div>
+                                    <div
+                                        class="missioncountry bg-white px-3 text-dark me-2 mt-2 p-1  d-flex flex-nowrap d-block left-2">
+                                        <img class="p-auto me-2" src="images/web.png" alt="" srcset="">
+                                        ENvironment
+                                    </div>
+                                    <div
+                                        class="missioncountry bg-white px-3 text-dark me-2 mt-2 p-1  d-flex flex-nowrap d-block left-2">
+                                        <img class="p-auto me-2" src="images/organization.png" alt="" srcset="">
+                                        Smith International Carrinf Foundation
+                                    </div>
+                                </div>
+                                <div class="d-block m-2">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/selected-star.png" alt="" srcset="">
+                                    <img src="images/star.png" alt="" srcset="">
+                                    <img src="images/star.png" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="mx-3">
+                                <h5 class="card-titl  fs-5">Education supplies for every pair of shoes sold</h5>
+                                <p class="missionshortdesc card-text text-muted">Some quick example text to build on the
+                                    card title and make up the bulk
+                                    of the card's content.</p>
+                                <div class="w-100 d-flex flex-row justify-content-between">
+
+                                    <div class="d-flex flex-row justify-content-start">
+                                        <div class="  d-flex flex-row justify-content-center">
+                                            <div class="d-flex justify-content-center flex-column">
+                                                <img src="images/Seats-left.png" alt="" srcset="">
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <p class="mb-0 ms-3 fs-6">10</p>
+                                                <p class="mb-0 text-muted fs-6 ms-3">Seats Left</p>
+                                            </div>
+                                        </div>
+                                        <div class="  d-flex flex-row justify-content-center">
+                                            <div class="d-flex justify-content-center flex-column">
+                                                <img src="images/deadline.png" alt="" srcset="">
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <p class="mb-0 ms-3 fs-6">10/23/2019</p>
+                                                <p class="mb-0 text-muted fs-6 ms-3">Deadline</p>
+                                            </div>
+                                        </div>
+                                        <div class="  d-flex flex-row justify-content-center">
+                                            <div class="d-flex justify-content-center flex-column">
+                                                <img src="images/calender.png" alt="" srcset="">
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <p class="mb-0 ms-3 fs-6">from 01/09/2019</p>
+                                                <p class="mb-0 text-muted fs-6 ms-3">Until 01/12/2020</p>
+                                            </div>
+                                        </div>
+                                        <div class="  d-flex flex-row justify-content-center">
+                                            <div class="d-flex justify-content-center flex-column">
+                                                <img src="images/settings.png" alt="" srcset="">
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <p class="mb-0 ms-3 fs-6">Skills</p>
+                                                <p class="mb-0 text-muted fs-6 ms-3">Botany</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="missionbtn d-block btn rounded-5 my-auto py-1" asp-controller="HTML"
+                                        asp-action="VolunteeringMissionPage">Apply
+                                        <svg class="ms-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- --------------------Eighth Card ------------------------->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="images/Education-Supplies-for-Every--Pair-of-Shoes-Sold-2.png" class="card-img-top"
-                        alt="...">
-                    <div class="d-flex align-items-center theme-detail">
-                        <hr class="flex-grow-1" />
-                        <div class="theme-name">Children</div>
-                        <hr class="flex-grow-1" />
-                    </div>
-                    <span id="location">
-                        <img src="images/pin.png" alt="#"> Sydney
-                    </span>
-                    <button id="likeBtn" class="btn" type="button">
-                        <img src="images/heart.png" alt="#">
-                    </button>
-                    <button id="saveBtn" class="btn" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
-                            class="bi bi-square-fill" viewBox="0 0 16 16">
-                            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
-                        </svg>
-                    </button>
-                    <div class="card-body">
-                        <h5 class="card-title">Grow Trees - On the path to environment sustainability</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore...</p>
-                        <div class="organizor-detail">
-                            <span id="organizer">Tree Canada</span>
-                            <div id="rating">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/star.png" alt="#">
-                                <img src="images/star.png" alt="#">
-                            </div>
-                        </div>
-
-                        <div class="py-3 d-flex align-items-center">
-                            <hr class="flex-grow-1" />
-                            <div class="duration">From 10/01/2019 until 25/02/2019</div>
-                            <hr class="flex-grow-1" />
-                        </div>
-
-                        <div class="row">
-                            <div class="col-6 numaricDetail">
-                                <div>
-                                    <img src="images/Already-volunteered.png" alt="#">
-                                </div>
-                                <div id="numbers">
-                                    <h4>250</h4>
-                                    <p>Already volunteered</p>
-                                </div>
-                            </div>
-                            <div class="col-6 numaricDetail">
-                                <div>
-                                    <img src="images/deadline.png" alt="#">
-                                </div>
-                                <div id="numbers">
-                                    <h4>09/01/2019</h4>
-                                    <p>Deadline</p>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="line mt-1 mb-0">
-                        <div id="applyBtn">
-                            <button class="btnCustom" type="button">Apply
-                                <img src="images/right-arrow.png" alt="">
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- --------------------Ninth Card ------------------------->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="images/Nourish-the-Children-in--African-country-1.png" class="card-img-top" alt="...">
-                    <div class="d-flex align-items-center theme-detail">
-                        <hr class="flex-grow-1" />
-                        <div class="theme-name">Nutrition</div>
-                        <hr class="flex-grow-1" />
-                    </div>
-                    <span id="location">
-                        <img src="images/pin.png" alt="#"> Berlin
-                    </span>
-                    <button id="likeBtn" class="btn" type="button">
-                        <img src="images/heart.png" alt="#">
-                    </button>
-                    <button id="saveBtn" class="btn" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
-                            class="bi bi-square-fill" viewBox="0 0 16 16">
-                            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
-                        </svg>
-                    </button>
-                    <div class="card-body">
-                        <h5 class="card-title">Grow Trees - On the path to environment sustainability</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore...</p>
-                        <div class="organizor-detail">
-                            <span id="organizer">Tree Canada</span>
-                            <div id="rating">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/selected-star.png" alt="#">
-                                <img src="images/star.png" alt="#">
-                                <img src="images/star.png" alt="#">
-                            </div>
-                        </div>
-
-                        <div class="py-3 d-flex align-items-center">
-                            <hr class="flex-grow-1" />
-                            <div class="duration">From 10/01/2019 until 25/02/2019</div>
-                            <hr class="flex-grow-1" />
-                        </div>
-
-                        <div class="row">
-                            <div class="col-6 numaricDetail">
-                                <div>
-                                    <img src="images/Already-volunteered.png" alt="#">
-                                </div>
-                                <div id="numbers">
-                                    <h4>250</h4>
-                                    <p>Already volunteered</p>
-                                </div>
-                            </div>
-                            <div class="col-6 numaricDetail">
-                                <div>
-                                    <img src="images/deadline.png" alt="#">
-                                </div>
-                                <div id="numbers">
-                                    <h4>09/01/2019</h4>
-                                    <p>Deadline</p>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="line mt-1 mb-0">
-                        <div id="applyBtn">
-                            <button class="btnCustom" type="button">Apply
-                                <img src="images/right-arrow.png" alt="">
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <!-- pagination -->
+            <div class="d-flex justify-content-center">
+                <nav aria-label="..." class="">
+                    <ul class="pagination" class="d-block my-auto mx-auto">
+                        <li class="page-item disabled">
+                            <a class="page-link">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
+    <span class="w-100 border border-lightsubtle " style="display: block;height: 0px;width: 100%"></span>
+    <a asp-controller="HTML" asp-action="NomissionFound">no mission found</a>
+    <footer class="bg-dark p-4">
+        <div class="d-flex my-4">
+            <p class="text-white float-left">This website makes use of cookies to enhance browsing experience and
+                provide additional functionality</p>
+            <a class="text-white d-flex mx-auto text-capitalize float-left">privay policy</a>
+            <button class="missionbtn d-block btn rounded-5 py-2 px-4 mx-auto my-3 float-right">I Agree
 
-    <!-- ------------------------------  Pagination  ----------------------------- -->
-    <div class="container pages">
-        <!-- <nav aria-label="...">
-            <ul class="pagination">
-                <li class="page-item disabled"><span class="page-link">Previous</span></li>
-                <li class="active-page" aria-current="page"><a class="text-white" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                <li class="page-item"><a class="page-link" href="#">6</a></li>
-                <li class="page-item"><a class="page-link" href="#">7</a></li>
-                <li class="page-item"><a class="page-link" href="#">8</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
-        </nav> -->
+            </button>
 
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                <li class="page-item"><a class="page-link" href="#">6</a></li>
-                <li class="page-item"><a class="page-link" href="#">7</a></li>
-                <li class="page-item"><a class="page-link" href="#">8</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
-        </nav>
-
-    </div>
-
-
-    <hr class="line bottomLine">
-    <footer>
-        <div class="container footer">
-            <div id="leftLinks">
-                <a href="#">Privacy Policy</a>
-            </div>
         </div>
+
     </footer>
 
-</body>
-<script src="js/bootstrap.bundle.min.js"></script>
 
-</html>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/custom.js"></script>
+
+</html
