@@ -1,4 +1,3 @@
-
 #first-header {
     display: flex;
     justify-content: center;
@@ -63,7 +62,7 @@
     width: 100%;
 }
 
-.mission-detail{
+.mission-detail {
     display: flex;
     flex-direction: row;
     width: 100%;
